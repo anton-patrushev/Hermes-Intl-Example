@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { SafeAreaView, ScrollView } from 'react-native';
 
 import HermesInfo from './HermesInfo';
 import TimeZoneTile from './TimeZoneTile';
@@ -20,20 +20,22 @@ const App = () => {
   React.useEffect(() => {
     const interval = setInterval(() => {
       setDate(getNow());
-    }, 500);
+    }, 300);
 
-    return clearInterval(interval);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <ScrollView style={styles.screen}>
-      <HermesInfo />
+    <SafeAreaView style={styles.screen}>
+      <ScrollView style={styles.content}>
+        <HermesInfo />
 
-      <TimeZoneTile date={date} timeZone={GMT_TIMEZONE} />
-      <TimeZoneTile date={date} timeZone={BROKEN_CASE_GMT_TIMEZONE} />
-      <TimeZoneTile date={date} timeZone={AMERICA_NEW_YORK_TIMEZONE} />
-      <TimeZoneTile date={date} timeZone={BROKEN_CASE_AMERICA_NEW_YORK_TIMEZONE} />
-    </ScrollView>
+        <TimeZoneTile date={date} timeZone={GMT_TIMEZONE} />
+        <TimeZoneTile date={date} timeZone={BROKEN_CASE_GMT_TIMEZONE} />
+        <TimeZoneTile date={date} timeZone={AMERICA_NEW_YORK_TIMEZONE} />
+        <TimeZoneTile date={date} timeZone={BROKEN_CASE_AMERICA_NEW_YORK_TIMEZONE} />
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 

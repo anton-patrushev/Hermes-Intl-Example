@@ -2,9 +2,9 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   screen: {
-    paddingHorizontal: 20,
+    flex: 1,
   },
-  content: {},
+  content: { paddingHorizontal: 20 },
   tile: {
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
