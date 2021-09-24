@@ -28,12 +28,12 @@ const App = () => {
   return (
     <SafeAreaView style={styles.screen}>
       <ScrollView style={styles.content}>
-        {/* <HermesInfo /> */}
+        <HermesInfo />
 
-        {/* <TimeZoneTile date={date} timeZone={GMT_TIMEZONE} /> */}
-        {/* <TimeZoneTile date={date} timeZone={BROKEN_CASE_GMT_TIMEZONE} />
+        <TimeZoneTile date={date} timeZone={GMT_TIMEZONE} />
+        <TimeZoneTile date={date} timeZone={BROKEN_CASE_GMT_TIMEZONE} />
         <TimeZoneTile date={date} timeZone={AMERICA_NEW_YORK_TIMEZONE} />
-        <TimeZoneTile date={date} timeZone={BROKEN_CASE_AMERICA_NEW_YORK_TIMEZONE} /> */}
+        <TimeZoneTile date={date} timeZone={BROKEN_CASE_AMERICA_NEW_YORK_TIMEZONE} />
       </ScrollView>
     </SafeAreaView>
   );
